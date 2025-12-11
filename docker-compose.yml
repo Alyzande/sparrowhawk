@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  analyzer:
+    build: ./backend
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    environment:
+      - MIN_GAP_HOURS=12
+      - RISK_THRESHOLD=70
+    restart: "no"
+
+  web:
+    build: ./frontend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data/output:/app/data
+    depends_on:
+      - analyzer
