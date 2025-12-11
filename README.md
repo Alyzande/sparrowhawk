@@ -34,7 +34,6 @@ Active Alerts Interface:
 
 ## Quick Start
 
-```bash
 # 1. Clone repository
 git clone https://github.com/alyzande/sparrowhawk.git
 cd sparrowhawk
